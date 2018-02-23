@@ -7,12 +7,17 @@ const PORT2 = 7500;
 function handleRequestOne(request, response){
 	//below statements are triggered (user side) when the user visits the PORT url
 	response.end("Server one works.  Path hit: " + request.url);
+	var goodRes = ["You are Awesome!", "Keep up the Good work!"]
 
 }
 
 function handleRequestTwo(request, response){
 	//below statements are triggered (user side) when the user visits the PORT url
+	console.log("Whoooooo! 7500")
+
 	response.end("Server two works.  Path hit: " + request.url);
+	var badRes = ['Why are you here?', "You Suck!"]
+	//console.log("Whoooooo!")
 
 }
 
@@ -25,6 +30,7 @@ const serverTwo = http.createServer(handleRequestTwo);
 serverOne.listen(PORT1, function(){
 	//trigger this statement server side when the user visits the PORT url
 	console.log("Server one listeing on: http://localhost:" + PORT1);
+	console.log("Cool! 7000")
 	
 });
 
